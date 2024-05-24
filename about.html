@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SHOP</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: "Pixelify Sans", sans-serif;
+        }
+
+        .header {
+            background-color: #16121c;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }   
+
+        .brand-logo {
+            width: 60px; 
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .developer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .developer {
+            text-align: center;
+            background-color: #7a748b;
+            padding: 60px;
+            width: 250px;
+            border-radius: 30px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease forwards;
+            color: white;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0.3;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .developer img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #fff;
+            padding: 5px;
+        }
+
+        .developer h3 {
+            color: #1e0a3d;
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .developer p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        footer {
+            background-color: #16121c;
+            color: #cecece;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+        .references-box {
+            background-color: #4c4250;
+            border: 1px solid #322936;
+            border-radius: 30px;
+            padding: 20px;
+            margin: 10px auto;
+            width: 1060px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0.3;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .references-box h3 {
+            color: #ffffff;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .references-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #e6e6e6;
+            margin-bottom: 20px;
+        }
+
+        .references-box ul li {
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header d-flex justify-content-between align-items-center p-3 bg-dark text-white">
+        <h1 class="d-flex align-items-center m-0">
+            <img src="PHOTOS/logo.gif" alt="Logo" class="brand-logo">
+            The Apothecary
+        </h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">New & Featured</a></li>
+                <li><a href="potions.html">Potions</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="developer-container">
+        <div class="developer">
+            <img src="PHOTOS/developer1.jpg" alt="Developer 1">
+            <h3>Ellizson Saez</h3>
+             - Main Coder <hr>
+             - Lebron 
+        </div>
+        <div class="developer">
+            <img src="PHOTOS/developer2.jpg" alt="Developer 2">
+            <h3>Sabria Ko</h3>
+             - Sub Coder <hr>
+             - Goofy 
+        </div>
+        <div class="developer">
+            <img src="PHOTOS/developer3.jpg" alt="Developer 3">
+            <h3>Corinne Roldan</h3>
+             - Artist <hr>
+             - Silly 
+        </div>
+    </div>
+    <div class="references-box">
+        <h3>References:</h3>
+        <ul>
+            <li> We took inspiration from Pinterest with our hand-drawn potions. </li>
+            <li> We also took inspiration from the Nike website. </li>
+        </ul>
+    </div>
+    <footer>
+        <p>&copy; 2024 The Apothecary, Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>

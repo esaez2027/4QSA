@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="potions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header d-flex justify-content-between align-items-center p-3 bg-dark text-white">
+        <h1 class="d-flex align-items-center m-0">
+            <img src="PHOTOS/logo.gif" alt="Logo" class="brand-logo">
+            The Apothecary
+
+        </h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">New & Featured</a></li>
+                <li><a href="potions.html">Potions</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <button id="cart-button" class="cart">
+        <img src="PHOTOS/cart.png" alt="Cart">
+    </button>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: $<span id="total-price">0.00</span></p>
+            <form id="checkout-form" action="http://sirjm.infinityfreeapp.com/checkout.php" method="GET">
+                <input type="text" name="cust_name" placeholder="Your Name" required>
+                <input type="text" name="cust_addr" placeholder="Your Address" required>
+                <input type="email" name="cust_email" placeholder="Your Email" required>
+                <input type="hidden" name="cust_order" id="cust_order">
+                <button type="submit" onclick="prepareCheckout()">Checkout</button>
+            </form>
+        </div>
+    </div>
+    <main>
+        <section id="products">
+            <h2 style="margin-left: 48px; font-size: 35px;">Physical Alteration</h2>
+            <div class="category">
+                <div class="category1" id="CATEGORY1" style="background-image: url(PHOTOS/polyjuice.jpg);">
+                    <h3>Polyjuice Potion $500</h3>
+                    <div class="product" data-name="Polyjuice-Potion" data-price="500">
+                        <button class="btn" onclick="addToCart('Polyjuice-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/wings.jpg);">
+                    <h3>Wings Potion $450</h3>
+                    <div class="product" data-name="Wings-Potion" data-price="450">
+                        <button class="btn" onclick="addToCart('Wings-Potion', 450)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/size-increase.jpg);">
+                    <h3>Size-Increase Potion $400</h3>
+                    <div class="product" data-name="Size-Increase-Potion" data-price="400">
+                        <button class="btn" onclick="addToCart('Size-Increase-Potion', 400)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/chameleon.jpg);">
+                    <h3>Chameleon Potion $350</h3>
+                    <div class="product" data-name="Chameleon-Potion" data-price="350">
+                        <button class="btn" onclick="addToCart('Chameleon-Potion', 350)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/beast.jpg);">
+                    <h3>Beast Potion $300</h3>
+                    <div class="product" data-name="Beast-Potion" data-price="300">
+                        <button class="btn" onclick="addToCart('Beast-Potion', 300)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <h2 style="margin-left: 48px; font-size: 35px;">Wield the power of the Elements</h2>
+            <div class="category">
+                <div class="category1" style="background-image: url(PHOTOS/Elm_Ele.jpg);">
+                    <h3>Electric Potion $500</h3>
+                    <div class="product" data-name="Electric-Potion" data-price="500">
+                        <button class="btn" onclick="addToCart('Electric-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Elm_Frost.jpg);">
+                    <h3>Frost Potion $500</h3>
+                    <div class="product" data-name="Frost-Potion" data-price="500">
+                        <button class="btn" onclick="addToCart('Frost-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Elm_Inferno.jpg);">
+                    <h3>Inferno Potion $500</h3>
+                    <div class="product" data-name="Inferno-Potion" data-price="500">
+                        <button class="btn" onclick="addToCart('Inferno-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Elm_Terra.jpg);">
+                    <h3>Terraform Potion $500</h3>
+                    <div class="product" data-name="Terraform-Potion" data-price="500">
+                        <button class="btn" onclick="addToCart('Terraform-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Elm_Ze.jpg);">
+                    <h3>Wind Potion $500</h3>
+                    <div class="product" data-name="Wind-Potion" data-price="500">
+                        <button class="btn" onclick="addToCart('Wind-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="margin-left: 48px; font-size: 35px;">Study Helpers</h2>
+            <div class="category">
+                <div class="category1" style="background-image: url(PHOTOS/Study_Awake.jpg);">
+                    <h3>Waking Potion $100</h3>
+                    <div class="product" data-name="Waking-Potion" data-price="100">
+                        <button class="btn" onclick="addToCart('Waking-Potion', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Study_Burnout.jpg);">
+                    <h3>Anti Burnout Potion $200</h3>
+                    <div class="product" data-name="Anti-Burnout-Potion" data-price="200">
+                        <button class="btn" onclick="addToCart('Anti-Burnout-Potion', 200)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Study_Cram.jpg);">
+                    <h3>Cramming Potion $300</h3>
+                    <div class="product" data-name="Cramming-Potion" data-price="300">
+                        <button class="btn" onclick="addToCart('Cramming-Potion', 300)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Study_Focus.jpg);">
+                    <h3>Focus Potion $400</h3>
+                    <div class="product" data-name="Focus-Potion" data-price="400">
+                        <button class="btn" onclick="addToCart('Focus-Potion', 400)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Study_Will.jpg);">
+                    <h3>Motivation Potion $500</h3>
+                    <div class="product" data-name="Motivation" data-price="500">
+                        <button class="btn" onclick="addToCart('Motivation-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="margin-left: 48px; font-size: 35px;">Wield the power of Emotions</h2>
+            <div class="category">
+                <div class="category1" style="background-image: url(PHOTOS/Emrg_Confidence.jpg);">
+                    <h3>Confidence Potion $500</h3>
+                    <div class="product" data-name="Confidence-Potion" data-price="500">
+                        <button class="btn" onclick="addToCart('Confidence-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Emrg_Euphoria.jpg);">
+                    <h3>Empathy Potion $500</h3>
+                    <div class="product" data-name="Empathy" data-price="500">
+                        <button class="btn" onclick="addToCart('Empathy-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Emrg_Joy.jpg);">
+                    <h3>Joy Potion $500</h3>
+                    <div class="product" data-name="Joy-Potion" data-price="500">
+                        <button class="btn" onclick="addToCart('Joy-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Emrg_Serenity.jpg);">
+                    <h3>Disgust Potion $500</h3>
+                    <div class="product" data-name="Disgust" data-price="500">
+                        <button class="btn" onclick="addToCart('Disgust-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="category1" style="background-image: url(PHOTOS/Emrg_Euphoria\(1\).jpg);">
+                    <h3>Personality Swapper Potion $500</h3>
+                    <div class="product" data-name="Personality-Swapper-Potion" data-price="500">
+                        <button class="btn" onclick="addToCart('Personality-Swapper-Potion', 500)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>    
+
+    <footer>
+        <p>&copy; 2024 The Apothecary, Inc. All rights reserved.</p>
+    </footer>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `${item.name} - $${item.price.toFixed(2)} <button onclick="removeFromCart(${index})">Remove</button>`;
+                cartItems.appendChild(li);
+                totalPrice += item.price;
+            });
+
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        }
+
+        function prepareCheckout() {
+            const custOrder = cart.map(item => ({ prod_name: item.name, prod_price: item.price }));
+            document.getElementById('cust_order').value = JSON.stringify(custOrder);
+        }
+
+        const modal = document.getElementById('cart-modal');
+        const btn = document.getElementById('cart-button');
+        const span = document.getElementsByClassName('close')[0];
+
+        btn.onclick = function() {
+            modal.style.display = 'block';
+        }
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
